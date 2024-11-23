@@ -209,7 +209,7 @@ AgregarVariables_IntraMes <- function(dataset) {
     dataset[, vmr_mpagominimo := vm_mpagominimo / vm_mlimitecompra]
 
   # Aqui debe usted agregar sus propias nuevas variables
-
+  dataset[, pesos := sum(clase_ternaria == "BAJA+2") / .N, by = foto_mes]
   # valvula de seguridad para evitar valores infinitos
   # paso los infinitos a NULOS
   infinitos <- lapply(
