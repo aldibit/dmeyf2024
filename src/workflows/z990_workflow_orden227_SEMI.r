@@ -153,7 +153,7 @@ FEhist_base <- function( pinputexps)
   # no me engraso las manos con las tendencias de segundo orden
   param_local$Tendencias2$run <- FALSE
   param_local$Tendencias2$ventana <- 12
-  param_local$Tendencias2$tendencia <- FALSE
+  param_local$Tendencias2$tendencia <- TRUE
   param_local$Tendencias2$minimo <- FALSE
   param_local$Tendencias2$maximo <- FALSE
   param_local$Tendencias2$promedio <- FALSE
@@ -183,7 +183,7 @@ FErf_attributes_base <- function( pinputexps, ratio, desvio)
   # parametros para que LightGBM se comporte como Random Forest
   param_local$lgb_param <- list(
     # parametros que se pueden cambiar
-    num_iterations = 20,
+    num_iterations = 25,
     num_leaves  = 16,
     min_data_in_leaf = 1000,
     feature_fraction_bynode  = 0.2,
@@ -299,7 +299,9 @@ TS_strategy_base8 <- function( pinputexps )
   param_local$final_train$undersampling <- 0.02
   param_local$final_train$clase_minoritaria <- c( "BAJA+1", "BAJA+2")
   param_local$final_train$training <- c(
-    202106, 202105, 202104, 202103, 202102, 202101, 
+    202106, 202105, 
+    #202104, 202103,
+    202102, 202101, 
     202012, 202011, 202010, 202009, 202008, 202007, 
     # 202006  Excluyo por variables rotas
     202005, 202004, 202003, 202002, 202001,
@@ -315,7 +317,8 @@ TS_strategy_base8 <- function( pinputexps )
   param_local$train$validation <- c(202105)
 
   param_local$train$training <- c(
-    202104, 202103, 202102, 202101, 
+    # 202104, 202103, 
+    202102, 202101, 
     202012, 202011, 202010, 202009, 202008, 202007, 
     # 202006  Excluyo por variables rotas
     202005, 202004, 202003, 202002, 202001,
