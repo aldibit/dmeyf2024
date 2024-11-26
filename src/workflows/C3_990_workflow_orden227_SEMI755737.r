@@ -469,7 +469,7 @@ KA_evaluate_kaggle_semillerio <- function( pinputexps )
   param_local$envios_desde <- 10500L
   param_local$envios_hasta <- 12050L
   param_local$envios_salto <-   500L
-  param_local$competition <- "dm-ey-f-2024-segunda"
+  param_local$competition <- "dm-ey-f-2024-tercera"
 
   return( exp_correr_script( param_local ) ) # linea fija
 }
@@ -481,7 +481,7 @@ KA_evaluate_kaggle_semillerio <- function( pinputexps )
 # Que predice 202107 donde conozco la clase
 # y ya genera graficos
 
-wf_SEMI_ago_orden227 <- function( pnombrewf )
+wf_SEMI_ago_orden227_SEMILLA755737 <- function( pnombrewf )
 {
   param_local <- exp_wf_init( pnombrewf ) # linea fija
 
@@ -493,7 +493,7 @@ wf_SEMI_ago_orden227 <- function( pnombrewf )
   DR_drifting_base(metodo="rank_cero_fijo")
   FEhist_base()
   ultimo <- FErf_attributes_base()
-  #CN_canaritos_asesinos_base(ratio=0.2, desvio=4.0)
+  CN_canaritos_asesinos_base(ratio=0.2, desvio=4.0)
 
   ts8 <- TS_strategy_base8()
 
@@ -523,5 +523,4 @@ wf_SEMI_ago_orden227 <- function( pnombrewf )
 
 # llamo al workflow con future = 202108
 wf_SEMI_ago_orden227_SEMILLA755737()
-
 
